@@ -150,13 +150,14 @@ class Test:
     def main():
         headers = {'Quote Number','Date','Ship To','Ship From','Name'}      #user-defined header list
         items = {"LineNumber",'PartNumber','Description','Price'}           #user-define items list
-        file_path = sys.argv[1]                                             #file-path input from command-line as argument
-        xls_par = ExcelParse(file_path,headers,items)
+        in_file_path = sys.argv[1]                                             #file-path input from command-line as argument
+        out_file_path = sys.argv[2]
+        xls_par = ExcelParse(in_file_path,headers,items)
         xls_par.open()
         xls_par.parse_data()
         json_parsed = xls_par.parseToJSON()
         print(json_parsed)
-        with open ("ParsedJSON.json","w") as outfile:
+        with open (out_file_path,"w") as outfile:
             json.dump(json_parsed,outfile)
 
     if __name__ == '__main__':
