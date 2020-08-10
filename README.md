@@ -1,4 +1,4 @@
-# python_projects
+# Python Projects
 
 The projects under this are coded on Python 2.7 and can be migrated to Python3 easily !
 
